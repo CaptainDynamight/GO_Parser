@@ -43,7 +43,7 @@ def extract_text_safely(html_content):
     return raw_text.strip()
 
 
-async def fetch_question(url: str, exam: str):
+async def fetch_question(url: str):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(java_script_enabled=False)
@@ -58,7 +58,6 @@ async def fetch_question(url: str, exam: str):
     
     question_data = {
         "question_id": url.split('/')[-2] if len(url.split('/')) > 2 else "UNKNOWN", 
-        "exam": exam,
         "subject": "UNKNOWN", 
         "tags": [],
         "question_type": "UNKNOWN", 

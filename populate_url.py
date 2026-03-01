@@ -24,7 +24,7 @@ categories = [
 base_url = "https://gateoverflow.in"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
-with open('url/go_question_urls.csv', 'w', newline='') as file:
+with open('data/go_question_urls.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["Subject", "Question_URL"])
 
